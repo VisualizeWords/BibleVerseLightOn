@@ -20,12 +20,12 @@
       padding: 2rem 1rem;
     }
 
-    .verse-box {
+    .verse-box, .video-box, .animation-box, .share-box {
       background: white;
       margin: 2rem auto;
       padding: 2rem;
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -51,6 +51,27 @@
       background-color: #001f4d;
     }
 
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .share-buttons a {
+      margin: 0 10px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.2rem;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .whatsapp { background: #25D366; }
+    .facebook { background: #1877F2; }
+    .telegram { background: #0088cc; }
+
     footer {
       background: #003366;
       color: white;
@@ -71,14 +92,42 @@
     <p>Bringing God's Word to Life Every Day</p>
   </header>
 
+  <!-- Daily Bible Verse -->
   <div class="verse-box">
     <h2>Today’s Bible Verse</h2>
     <p id="verseText">Loading verse...</p>
-
-    <!-- Monetized Button -->
     <a class="action-button" href="https://shrinke.me/your-link" target="_blank">
       🎬 Watch Bible Story Video
     </a>
+  </div>
+
+  <!-- Embedded YouTube Video -->
+  <div class="video-box">
+    <h2>Today’s Featured Bible Video</h2>
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    <br>
+    <a class="action-button" href="https://www.youtube.com/channel/YOUR_CHANNEL_ID?sub_confirmation=1" target="_blank">
+      🔔 Subscribe on YouTube
+    </a>
+  </div>
+
+  <!-- Bible Animation Section (Link to your app or video) -->
+  <div class="animation-box">
+    <h2>AI Bible Animation</h2>
+    <p>Experience the Bible in motion with our AI-powered animation.</p>
+    <a class="action-button" href="https://replicate-animation-link" target="_blank">
+      📽️ Watch Animated Bible Story
+    </a>
+  </div>
+
+  <!-- Social Share Buttons -->
+  <div class="share-box">
+    <h2>Share this Blessing</h2>
+    <div class="share-buttons">
+      <a class="whatsapp" href="https://wa.me/?text=Watch%20this%20inspiring%20Bible%20video%20at%20https://yourdomain.github.io" target="_blank">WhatsApp</a>
+      <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.github.io" target="_blank">Facebook</a>
+      <a class="telegram" href="https://t.me/share/url?url=https://yourdomain.github.io&text=Inspiring%20Bible%20Story%20Video" target="_blank">Telegram</a>
+    </div>
   </div>
 
   <footer>
@@ -86,38 +135,18 @@
     <a href="mailto:youremail@example.com">Contact Us</a></p>
   </footer>
 
-  <!-- JavaScript: Random Bible Verse -->
+  <!-- JavaScript: Random Verse -->
   <script>
     const verses = [
-      {
-        reference: "Psalm 23:1",
-        text: "The Lord is my shepherd; I shall not want."
-      },
-      {
-        reference: "John 3:16",
-        text: "For God so loved the world, that He gave His only begotten Son..."
-      },
-      {
-        reference: "Philippians 4:13",
-        text: "I can do all things through Christ who strengthens me."
-      },
-      {
-        reference: "Isaiah 41:10",
-        text: "Fear not, for I am with you; be not dismayed, for I am your God."
-      },
-      {
-        reference: "Proverbs 3:5",
-        text: "Trust in the Lord with all your heart, and lean not on your own understanding."
-      },
-      {
-        reference: "Romans 8:28",
-        text: "And we know that in all things God works for the good of those who love him..."
-      }
+      { reference: "Psalm 23:1", text: "The Lord is my shepherd; I shall not want." },
+      { reference: "John 3:16", text: "For God so loved the world, that He gave His only begotten Son..." },
+      { reference: "Philippians 4:13", text: "I can do all things through Christ who strengthens me." },
+      { reference: "Isaiah 41:10", text: "Fear not, for I am with you; be not dismayed, for I am your God." },
+      { reference: "Proverbs 3:5", text: "Trust in the Lord with all your heart, and lean not on your own understanding." },
+      { reference: "Romans 8:28", text: "And we know that in all things God works for the good of those who love him..." }
     ];
-
     const verse = verses[Math.floor(Math.random() * verses.length)];
-    document.getElementById("verseText").innerHTML =
-      `<strong>${verse.reference}</strong><br>${verse.text}`;
+    document.getElementById("verseText").innerHTML = `<strong>${verse.reference}</strong><br>${verse.text}`;
   </script>
 
 </body>
