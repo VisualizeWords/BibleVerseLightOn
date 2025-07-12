@@ -2,65 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BibleVerseLight – Support Our Mission</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BibleVerseLight – Watch and Be Inspired</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #003366;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #002366;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       text-align: center;
     }
-    .container {
-      padding: 20px;
-      max-width: 600px;
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 2rem 1rem;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #002366;
+
+    .verse-box, .video-box, .animation-box, .share-box {
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    p {
-      font-size: 1.2rem;
-      margin: 20px 0;
+
+    h1, h2 {
+      margin-bottom: 0.5rem;
     }
-    .kofi-button iframe {
+
+    .action-button {
+      background-color: #003366;
+      color: white;
       border: none;
-      height: 36px;
-      width: 220px;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
     }
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
+
+    .action-button:hover {
+      background-color: #001f4d;
     }
-    .footer {
-      margin-top: 40px;
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .share-buttons a {
+      margin: 0 10px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.2rem;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .whatsapp { background: #25D366; }
+    .facebook { background: #1877F2; }
+    .telegram { background: #0088cc; }
+
+    footer {
+      background: #003366;
+      color: white;
+      padding: 1rem;
       font-size: 0.9rem;
-      color: #666;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: #66ccff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Bible Icon" class="logo" />
+
+  <header>
     <h1>BibleVerseLight</h1>
-    <p>Sharing God’s Word through beautiful Bible animations.</p>
-    <p>If you've been blessed by our videos, you can support us below ↓</p>
+    <p>Bringing God's Word to Life Every Day</p>
+  </header>
 
-    <div class="kofi-button">
-      <iframe src="https://ko-fi.com/YOURUSERNAME/?hidefeed=true&widget=true&embed=true&preview=true" title="Support me on Ko-fi"></iframe>
-    </div>
+  <!-- Daily Bible Verse -->
+  <div class="verse-box">
+    <h2>Today’s Bible Verse</h2>
+    <p id="verseText">Loading verse...</p>
+    <a class="action-button" href="https://shrinke.me/your-link" target="_blank">
+      🎬 Watch Bible Story Video
+    </a>
+  </div>
 
-    <div class="footer">
-      &copy; 2025 BibleVerseLight – All rights reserved.
+  <!-- Embedded YouTube Video -->
+  <div class="video-box">
+    <h2>Today’s Featured Bible Video</h2>
+    <iframe src="https://www.youtube.com/embed/CIXpA0vGMx0" allowfullscreen></iframe>
+    <br>
+    <a class="action-button" href="https://www.youtube.com/@TheInsightWell-BibleSparks?sub_confirmation=1" target="_blank">
+      🔔 Subscribe on YouTube
+    </a>
+  </div>
+
+  <!-- Bible Animation Section (Links to your YouTube Channel) -->
+  <div class="animation-box">
+    <h2>Animated Bible Stories</h2>
+    <p>Watch AI-powered animations of Bible stories on our YouTube channel.</p>
+    <a class="action-button" href="https://m.youtube.com/@TheInsightWell-BibleSparks" target="_blank">
+      📺 Watch on YouTube
+    </a>
+  </div>
+
+  <!-- Social Share Buttons -->
+  <div class="share-box">
+    <h2>Share this Blessing</h2>
+    <div class="share-buttons">
+      <a class="whatsapp" href="https://wa.me/?text=Watch%20this%20inspiring%20Bible%20video%20at%20https://yourusername.github.io/bibleverselight" target="_blank">WhatsApp</a>
+      <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://yourusername.github.io/bibleverselight" target="_blank">Facebook</a>
+      <a class="telegram" href="https://t.me/share/url?url=https://yourusername.github.io/bibleverselight&text=Inspiring%20Bible%20Story%20Video" target="_blank">Telegram</a>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 BibleVerseLight. All Rights Reserved.<br>
+    <a href="mailto:youremail@example.com">Contact Us</a></p>
+  </footer>
+
+  <!-- JavaScript: Random Verse -->
+  <script>
+    const verses = [
+      { reference: "Psalm 23:1", text: "The Lord is my shepherd; I shall not want." },
+      { reference: "John 3:16", text: "For God so loved the world, that He gave His only begotten Son..." },
+      { reference: "Philippians 4:13", text: "I can do all things through Christ who strengthens me." },
+      { reference: "Isaiah 41:10", text: "Fear not, for I am with you; be not dismayed, for I am your God." },
+      { reference: "Proverbs 3:5", text: "Trust in the Lord with all your heart, and lean not on your own understanding." },
+      { reference: "Romans 8:28", text: "And we know that in all things God works for the good of those who love him..." }
+    ];
+    const verse = verses[Math.floor(Math.random() * verses.length)];
+    document.getElementById("verseText").innerHTML = `<strong>${verse.reference}</strong><br>${verse.text}`;
+  </script>
+
 </body>
 </html>
