@@ -310,5 +310,42 @@ till no space is left
     document.getElementById("verseText").innerHTML = `<strong>${verse.reference}</strong><br>${verse.text}`;
   </script>
 
+
+  script>
+  const verses = [
+    {
+      reference: "Psalm 86",
+      text: `1 Hear me, Lord, and answer me, for I am poor and needy...
+2 Guard my life, for I am faithful to you...
+...
+17 Give me a sign of your goodness, that my enemies may see it and be put to shame, for you, Lord, have helped me and comforted me.`
+    },
+    {
+      reference: "Proverbs 3:1-5",
+      text: `1 My son, do not forget my teaching,
+but keep my commands in your heart...
+5 Trust in the Lord with all your heart and lean not on your own understanding.`
+    },
+    {
+      reference: "Jeremiah 5:1-5",
+      text: `1 Go up and down the streets of Jerusalem,
+look around and consider...
+5 So I will go to the leaders and speak to them...`
+    },
+    {
+      reference: "Isaiah 5:1-10",
+      text: `1 I will sing for the one I love a song about his vineyard...
+10 A ten-acre vineyard will produce only a bath of wine...`
+    }
+  ];
+
+  // Pick a random verse
+  const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+
+  // Display it
+  document.getElementById('verse-reference').textContent = randomVerse.reference;
+  document.getElementById('verse-text').textContent = randomVerse.text;
+</script>
+
 </body>
 </html>
