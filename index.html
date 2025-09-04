@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bible Be Inspired</title>
+  <meta name="description" content="Bible Verse Light On - Bringing God's Word to Life Every Day with verses, videos, and Bible animations.">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -20,7 +21,7 @@
       padding: 2rem 1rem;
     }
 
-    .verse-box, .video-box, .animation-box, .share-box {
+    .verse-box, .video-box, .animation-box, .share-box, .donate-box, .contact-box {
       background: white;
       margin: 2rem auto;
       padding: 2rem;
@@ -51,9 +52,20 @@
       background-color: #001f4d;
     }
 
-    iframe {
+    /* Responsive Video Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 315px;
+      height: 100%;
       border: none;
       border-radius: 12px;
     }
@@ -72,6 +84,46 @@
     .facebook { background: #1877F2; }
     .telegram { background: #0088cc; }
 
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #001f4d;
+    }
+
+    /* Success & Error Messages */
+    .form-message {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    .form-message.success {
+      color: green;
+    }
+    .form-message.error {
+      color: red;
+    }
+
     footer {
       background: #003366;
       color: white;
@@ -85,136 +137,142 @@
     }
   </style>
 
- <link rel="icon" href="bible_verse_light_favicon.png" type="image/png">
+  <link rel="icon" href="bible_verse_light_favicon.png" type="image/png">
 </head>
 <body>
 
   <header>
     <h1>Bible Verse Light On, YouTube</h1>
- <head>Bringing God's Word to Life Every Day</p>
+    <p>Bringing God's Word to Life Every Day</p>
   </header>
 
   <!-- Daily Bible Verse -->
   <div class="verse-box">
     <h2>Today’s Bible Verse</h2>
     <p id="verseText">Loading verse...</p>
-   
   </div>
 
   <!-- Embedded YouTube Video -->
-  
-  <div class="video-box" style="max-width: 800px; margin: auto; padding: 10px;">
-  <h2 style="text-align: center;">Latest YouTube Upload</h2>
-
-  <!-- Responsive Video -->
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
-    <iframe 
-      src="https://www.youtube.com/embed/u0CwUyfO-_8" 
-      frameborder="0" 
-      allowfullscreen
-      style="position: absolute; top:0; left:0; width:100%; height:100%;">
-    </iframe>
+  <div class="video-box">
+    <h2>Latest YouTube Upload</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/u0CwUyfO-_8" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div style="text-align: center; margin-top: 15px;">
+      <a class="action-button" 
+         href="https://www.youtube.com/@TheInsightwell_AnimatWordOfGod?sub_confirmation=1" 
+         target="_blank"
+         style="background: #FF0000; color: #fff; font-weight: bold; font-size: 16px;">
+        🔔 Subscribe on YouTube
+      </a>
+    </div>
   </div>
 
-  <!-- Subscribe Button -->
-  <div style="text-align: center; margin-top: 15px;">
-    <a class="action-button" 
-       href="https://www.youtube.com/@TheInsightwell_AnimatWordOfGod?sub_confirmation=1" 
-       target="_blank"
-       style="display: inline-block; background: #FF0000; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
-      🔔 Subscribe on YouTube
+  <!-- Ko-fi Donation Section -->
+  <div class="donate-box">
+    <h2>🙏 Support This Ministry</h2>
+    <p>If this content inspires or helps you, consider supporting BibleVerseLightOn with a small donation.</p>
+    <a href="https://ko-fi.com/bibleverselighton" target="_blank">
+      <img src="https://storage.ko-fi.com/cdn/kofi5.png" alt="Support on Ko-fi" style="height: 50px; border-radius: 8px;">
     </a>
   </div>
-</div>
-  
-<!-- Button Styles -->
-<style>
-  .yt-subscribe-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Roboto', Arial, sans-serif;
-    color: #fff;
-    background-color: #ff0000; /* YouTube red */
-    border-radius: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  }
 
-  .yt-subscribe-button:hover {
-    background-color: #cc0000; /* Darker red on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  }
-
-  .yt-icon {
-    width: 20px;
-    height: 20px;
-  }
-</style>
-
-<!-- Ko-fi Donation Section -->
-<div class="donate-box" style="background:#f9f9f9; padding:2rem; margin:2rem auto; max-width:700px; border-radius:12px;">
-  <h2>🙏 Support This Ministry</h2>
-  <p>If this content inspires or helps you, consider supporting BibleVerseLightOn with a small donation.</p>
-  <a href="https://ko-fi.com/bibleverselighton" target="_blank">
-    <img src="https://storage.ko-fi.com/cdn/kofi5.png" alt="Support on Ko-fi" style="height: 50px; border-radius: 8px;">
-  </a>
-</div>
-
-
-
-  <!-- Bible Animation Section (Links to your YouTube Channel) -->
+  <!-- Bible Animation Section -->
   <div class="animation-box">
     <h2>Animated Bible Stories</h2>
     <p>Watch AI-powered animations of Bible stories on our YouTube channel.</p>
-    <a class="action-button" href="https://m.youtube.com/@TheInsightwell_AnimatWordOfGod " target="_blank">
+    <a class="action-button" href="https://m.youtube.com/@TheInsightwell_AnimatWordOfGod" target="_blank">
       📺 Watch on YouTube
     </a>
   </div>
 
+  <!-- Contact Form -->
+  <div class="contact-box">
+    <h2>📩 Contact Us</h2>
+    <p>Send us a message, we’d love to hear from you!</p>
+    <form id="contact-form" action="https://formspree.io/f/meolpenw" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="form-message" class="form-message"></p>
+    </form>
+  </div>
 
   <!-- Social Share Buttons -->
   <div class="share-box">
     <h2>Share this Blessing</h2>
     <div class="share-buttons">
-      <a class="whatsapp" href="https://wa.me/?text=Watch%20this%20inspiring%20Bible%20video%20at%20   https://visualizewords.github.io/BibleVerseLightOn/   " target="_blank">WhatsApp</a>
-      <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u= https://visualizewords.github.io/BibleVerseLightOn/ " target="_blank">Facebook</a>
-      <a class="telegram" href="https://t.me/share/url?url=https://visualizewords.github.io/BibleVerseLightOn/
-&text=Inspiring%20Bible%20Story%20Video" target="_blank">Telegram</a>
+      <a class="whatsapp" href="https://wa.me/?text=Watch%20this%20inspiring%20Bible%20video%20at%20https://visualizewords.github.io/BibleVerseLightOn/" target="_blank">WhatsApp</a>
+      <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://visualizewords.github.io/BibleVerseLightOn/" target="_blank">Facebook</a>
+      <a class="telegram" href="https://t.me/share/url?url=https://visualizewords.github.io/BibleVerseLightOn/&text=Inspiring%20Bible%20Story%20Video" target="_blank">Telegram</a>
     </div>
   </div>
 
   <footer>
     <p>&copy; 2025 BibleVerseLightOn. All Rights Reserved.<br>
-    <a href="mailto: bibleverselight@gmail.com ">Contact Us</a></p>
+    <a href="mailto:bibleverselight@gmail.com">Contact Us</a></p>
   </footer>
 
-  <!-- JavaScript: Random Verse -->
+  <!-- JavaScript: Daily Verse (refreshes every 24 hours) -->
   <script>
     const verses = [
- { reference: "Psalm 23:1", text: "The Lord is my shepherd; I shall not want." },  
- { reference: "John 3:16", text: "For God so loved the world, that He gave His only begotten Son..." },
- { reference: "Philippians 4:13", text: "I can do all things through Christ who strengthens me." },
- { reference: "Isaiah 41:10", text: "Fear not, for I am with you; be not dismayed, for I am your God." },
- { reference: "Proverbs 3:5", text: "Trust in the Lord with all your heart, and lean not on your own understanding." },
- { reference: "Romans 8:28", text: "And we know that in all things God works for the good of those who love him..." },
- { reference: "Psalm 86", text: "1. Hear me, Lord, and answer me, for I am poor and needy. 2. Guard my life, for I am faithful to you;  save your servant who trusts in you.  You are my God; 3. have mercy on me, Lord, for I call to you all day long. 4. Bring joy to your servant, Lord, for I put my trust in you.."
-    },
- { reference: "1 John 1:7", text: "But if we walk in the light, as he is in the light, we have fellowship with one another, and the blood of Jesus, his Son, purifies us from all sin." },    
-      
+      { reference: "Psalm 23:1", text: "The Lord is my shepherd; I shall not want." },  
+      { reference: "John 3:16", text: "For God so loved the world, that He gave His only begotten Son..." },
+      { reference: "Philippians 4:13", text: "I can do all things through Christ who strengthens me." },
+      { reference: "Isaiah 41:10", text: "Fear not, for I am with you; be not dismayed, for I am your God." },
+      { reference: "Proverbs 3:5", text: "Trust in the Lord with all your heart, and lean not on your own understanding." },
+      { reference: "Romans 8:28", text: "And we know that in all things God works for the good of those who love him..." },
+      { reference: "Psalm 86", text: "1. Hear me, Lord, and answer me, for I am poor and needy. 2. Guard my life, for I am faithful to you; save your servant who trusts in you. You are my God; 3. have mercy on me, Lord, for I call to you all day long. 4. Bring joy to your servant, Lord, for I put my trust in you." },
+      { reference: "1 John 1:7", text: "But if we walk in the light, as he is in the light, we have fellowship with one another, and the blood of Jesus, his Son, purifies us from all sin." }
     ];
-    const verse = verses[Math.floor(Math.random() * verses.length)];
+
+    function getDailyVerse() {
+      const today = new Date().toDateString();
+      let stored = JSON.parse(localStorage.getItem("dailyVerse"));
+
+      if (!stored || stored.date !== today) {
+        const verse = verses[Math.floor(Math.random() * verses.length)];
+        stored = { date: today, verse: verse };
+        localStorage.setItem("dailyVerse", JSON.stringify(stored));
+      }
+
+      return stored.verse;
+    }
+
+    const verse = getDailyVerse();
     document.getElementById("verseText").innerHTML = `<strong>${verse.reference}</strong><br>${verse.text}`;
   </script>
 
+  <!-- JavaScript: Contact Form Handler -->
+  <script>
+    const form = document.getElementById("contact-form");
+    const messageBox = document.getElementById("form-message");
 
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        messageBox.textContent = "✅ Thank you! We’ll reply soon.";
+        messageBox.className = "form-message success";
+        form.reset();
+      } else {
+        messageBox.textContent = "❌ Oops! Something went wrong. Please try again.";
+        messageBox.className = "form-message error";
+      }
+    });
+  </script>
 
 </body>
 </html>
+
