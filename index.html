@@ -1,10 +1,13 @@
+
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bible Be Inspired</title>
-  <meta name="description" content="Bible Verse Light On - Bringing God's Word To Life Every Day with verses, videos, and Bible animations.">
+  <meta name="description" content="Bible Verse Light On - Bringing God's Word to Life Every Day with verses, videos, and Bible animations.">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -18,7 +21,26 @@
     header {
       background-color: #003366;
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #00264d;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #66ccff;
     }
 
     .verse-box, .video-box, .animation-box, .share-box, .donate-box, .contact-box {
@@ -140,11 +162,18 @@
   <link rel="icon" href="bible_verse_light_favicon.png" type="image/png">
 </head>
 <body>
- <header>
+
+  <header>
     <h1>Bible Verse Light On, YouTube</h1>
     <p>Bringing God's Word To Life Every Day</p>
   </header>
-  
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bible-download.pdf" target="_blank">Download Bible PDF</a>
+  </nav>
+
   <!-- Daily Bible Verse -->
   <div class="verse-box">
     <h2>Today’s Bible Verse</h2>
@@ -213,6 +242,7 @@
 
   <footer>
     <p>&copy; 2025 BibleVerseLightOn. All Rights Reserved.<br>
+    <a href="mailto:bibleverselight@gmail.com">Contact Us</a></p>
   </footer>
 
   <!-- JavaScript: Daily Verse (refreshes every 24 hours) -->
@@ -273,4 +303,4 @@
 
 </body>
 </html>
-
+```
